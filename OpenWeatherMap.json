@@ -1,0 +1,102 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "OpenWeatherMap API",
+    "description": "API for accessing weather data from OpenWeatherMap",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Your Name",
+      "email": "your.email@example.com",
+      "url": "https://example.com"
+    }
+  },
+  "host": "api.openweathermap.org",
+  "basePath": "/data/2.5",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/weather": {
+      "get": {
+        "summary": "Get weather data for a city",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "description": "City name and country code (e.g. London,uk)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "APPID",
+            "in": "query",
+            "description": "API key for accessing OpenWeatherMap data",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "coord": {
+                  "type": "object",
+                  "properties": {
+                    "lon": {
+                      "type": "number"
+                    },
+                    "lat": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "weather": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "main": {
+                        "type": "string"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "icon": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "base": {
+                  "type": "string"
+                },
+                "main": {
+                  "type": "object",
+                  "properties": {
+                    "temp": {
+                      "type": "number"
+                    },
+                    "pressure": {
+                      "type": "number"
+                    },
+                    "humidity": {
+                      "type": "number"
+                    },
+                    "temp_min": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
