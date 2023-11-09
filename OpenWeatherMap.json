@@ -28,7 +28,7 @@
             "type": "string"
           },
           {
-            "name": "APPID",
+            "name": "1f13e9718aeb4f867609f6f69ca57329",
             "in": "query",
             "description": "API key for accessing OpenWeatherMap data",
             "required": true,
