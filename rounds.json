@@ -1,5 +1,6 @@
 {
   "openapi": "3.0.1",
+  "swagger": "2.0",
   "info": {
     "title": "Roundabout API",
     "description": "API to manage the data of the roundabout applications",
